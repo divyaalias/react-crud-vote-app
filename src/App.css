@@ -1,5 +1,196 @@
+.ml-auto, .mx-auto {
+    margin-right: 7%;
+}
+
+.bg-dark {
+    background-color: #6D7AE0 !important;
+}
+
+.navbar-nav li {
+    margin-right: 26px;
+}
+
+.container {
+    margin: auto;
+}
+
+.top-bar {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+
+form.example input[type=text] {
+    padding: 6px;
+    font-size: 15px;
+    border: 1px solid #80808030;
+    background: white;
+}
+
+form.example button {
+    padding: 6px 30px;
+    margin-left: 10px;
+    background: #6D7AE0;
+    color: white;
+    font-size: 15px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+    border-spacing: 0;
+}
+
+
+tbody {
+    height: 100px; /* Just for the demo          */
+    overflow-y: scroll;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: #6D7AE0;
+    color: white;
+    font-weight:400;
+}
+.add-sub {
+    text-align: right;
+    float: right;
+    background: #6D7AE0;
+    padding: 0 30px !important;
+}
+.add-sub a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+    font-weight:bolder;
+    text-align:right !important;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 1em;
+}
+    table.fixed {
+        table-layout: fixed;
+        width: 100%;
+    }
+        /*Setting the table width is important!*/
+        table.fixed td {
+            overflow: hidden;
+        }
+            /*Hide text outside the cell.*/
+            table.fixed td:nth-of-type(1) {
+                width: 20%;
+            }
+            /*Setting the width of column 1.*/
+            table.fixed td:nth-of-type(2) {
+                width: 40%;
+            }
+            /*Setting the width of column 2.*/
+            table.fixed td:nth-of-type(3) {
+                width: 20%;
+            }
+/*Setting the width of column 3.*/
+tr {
+    border: 1px solid #dddddd5e;
+}
+    tr.noBorder td {
+        border: 0;
+    }
+td, th {
+    text-align: left;
+    padding: 6px 1px 6px 13px;
+    text-transform: capitalize;
+}
+table.fixed td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.col-1 {
+    width: 20%;
+}
+.col-2 {
+    width: 58%;
+}
+.col-3 {
+    width: 12%;
+}
+ .col-4 {
+    width: 10%;
+}
+
+ .col-5 {
+     width: 26%;
+ }
+
+tr:nth-child(even) {
+    background-color: #f9f9f7;
+}
+
+thead {
+    background-color: #6D7AE0;
+}
+.active, .inactive {
+    background-color: #f5eaea1f;
+    border: none;
+    outline: none !important;
+}
+.active {
+    color: black;
+}
+.inactive {
+    color: grey;
+}
+.voteBtn {
+    background-color: #f5eded40;
+    border: none;
+    outline-color: #8080805e !important;
+}
+.materialIcon {
+    color: grey;
+    margin: 0 3px 0 3px !important;
+    font-size: 1.1rem !important;
+}
+.btn-success {
+    color: #fff;
+    background-color: #6D7AE0;
+    border-color: #6D7AE0;
+}
+.submit-form{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+#description {
+    padding: 2.375rem .75rem
+}
+.h4, h4 {
+    font-size: 1.5rem;
+    margin-bottom: 26px;
+    text-align: center;
+    font-weight: normal;
+}
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {

@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Switch, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import AddSubject from "./components/add-subject.component";
+import Vote from "./components/vote.component";
+import SubjectsList from "./components/subjects-list.component";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <nav className="navbar navbar-expand navbar-dark bg-dark">
+                    <div className="navbar-nav ml-auto ">
+                        <li className="nav-item">
+                            <Link to={"/subjects"} className="nav-link">
+                                Subjects
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to={"/votes"} className="nav-link">
+                                Voting
+                            </Link>
+                        </li>
+                    </div>
+                </nav>
+
+                <div className="container mt-3">
+                    <Switch>
+                        <Route exact path={["/", "/subjects"]} component={SubjectsList} />
+                        <Route exact path="/add" component={AddSubject} />
+                        <Route exact path="/votes" component={Vote} />
+                    </Switch>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
+
