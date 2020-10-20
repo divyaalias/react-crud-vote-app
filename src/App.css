@@ -1,3 +1,4 @@
+/* top navigation starts */
 .ml-auto, .mx-auto {
     margin-right: 7%;
 }
@@ -10,6 +11,14 @@
     margin-right: 26px;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+    font-weight: bolder;
+    text-align: right !important;
+}
+/* top navigation ends */
+
+/* nav bar search and add new starts */
 .container {
     margin: auto;
 }
@@ -18,7 +27,6 @@
     display: inline-block;
     margin-bottom: 8px;
 }
-
 
 form.example input[type=text] {
     padding: 6px;
@@ -38,94 +46,60 @@ form.example button {
     cursor: pointer;
 }
 
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    overflow: hidden;
-    border-radius: 10px;
-    border-spacing: 0;
-}
-
-
-tbody {
-    height: 100px; /* Just for the demo          */
-    overflow-y: scroll;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2
-}
-
-th {
-    background-color: #6D7AE0;
-    color: white;
-    font-weight:400;
-}
 .add-sub {
     text-align: right;
     float: right;
     background: #6D7AE0;
     padding: 0 30px !important;
 }
+
 .add-sub a {
     color: white;
     text-decoration: none;
     background-color: transparent;
 }
-.navbar-dark .navbar-nav .nav-link {
-    color: white !important;
-    font-weight:bolder;
-    text-align:right !important;
+/* nav bar search and add new ends */
+
+/* table starts */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 1em;
+    border-spacing: 0;
 }
 
-table {
-    border-collapse: collapse;
+table.fixed {
+    table-layout: fixed;
     width: 100%;
-    border-radius: 1em;
 }
-    table.fixed {
-        table-layout: fixed;
-        width: 100%;
-    }
-        /*Setting the table width is important!*/
-        table.fixed td {
-            overflow: hidden;
-        }
-            /*Hide text outside the cell.*/
-            table.fixed td:nth-of-type(1) {
-                width: 20%;
-            }
-            /*Setting the width of column 1.*/
-            table.fixed td:nth-of-type(2) {
-                width: 40%;
-            }
-            /*Setting the width of column 2.*/
-            table.fixed td:nth-of-type(3) {
-                width: 20%;
-            }
-/*Setting the width of column 3.*/
-tr {
-    border: 1px solid #dddddd5e;
-}
-    tr.noBorder td {
-        border: 0;
-    }
-td, th {
-    text-align: left;
-    padding: 6px 1px 6px 13px;
-    text-transform: capitalize;
-}
+
 table.fixed td {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+th {
+    background-color: #6D7AE0;
+    color: white;
+    font-weight: 400;
+}
+
+th, td {
+    text-align: left;
+    padding: 6px 1px 6px 13px;
+    text-transform: capitalize;
+}
+
+tr {
+    border: 1px solid #dddddd5e;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f280;
+}
+
 .col-1 {
     width: 20%;
 }
@@ -142,14 +116,9 @@ table.fixed td {
  .col-5 {
      width: 26%;
  }
+/* table css ends */
 
-tr:nth-child(even) {
-    background-color: #f9f9f7;
-}
-
-thead {
-    background-color: #6D7AE0;
-}
+/* active and inactive status starts*/
 .active, .inactive {
     background-color: #f5eaea1f;
     border: none;
@@ -161,6 +130,9 @@ thead {
 .inactive {
     color: grey;
 }
+/* active and inactive status end*/
+
+/* all buttons and icons starts*/
 .voteBtn {
     background-color: #f5eded40;
     border: none;
@@ -176,19 +148,20 @@ thead {
     background-color: #6D7AE0;
     border-color: #6D7AE0;
 }
+
 .submit-form{
     margin-left: 25%;
     margin-right: 25%;
 }
-#description {
-    padding: 2.375rem .75rem
-}
-.h4, h4 {
+/* all buttons and icons ends*/
+
+h4 {
     font-size: 1.5rem;
     margin-bottom: 26px;
     text-align: center;
     font-weight: normal;
 }
+
 .App {
     text-align: center;
 }

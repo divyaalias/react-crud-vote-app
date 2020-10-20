@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, Redirect } from 'react-router-dom';
+import NavBar from "./nav-bar.component";
 
 class VoteComponent extends Component {
     constructor(props) {
@@ -9,8 +10,8 @@ class VoteComponent extends Component {
         }
     }
 
-   
-    buttonClicked(id, count) {
+    /*count increment*/
+    updateCount(id, count) {
         const subjects = this.state.subjects;
         subjects.map(item => {
             if (item.id === id) {
@@ -20,9 +21,8 @@ class VoteComponent extends Component {
         this.setState({ subjects: subjects });
     }
 
+    /* local storage get items */
     componentDidMount() {
-        {/* localStorage.removeItem("subjects"); 
-        */ }
         let itemsList = localStorage.getItem('subjects')
         if (itemsList) {
             this.setState({
@@ -30,28 +30,19 @@ class VoteComponent extends Component {
             })
         }
     }
+
+    /* local storage set items */
     componentDidUpdate() {
         {/* localStorage.removeItem("languages"); 
         */ }
         localStorage.setItem('subjects', JSON.stringify(this.state.subjects));
     }
+
     render() {
         return (
             <div>
                 <div class="container">
-                    <div>
-                        <div class="top-bar">
-                            <form class="example">
-                                <input type="text" placeholder="Search by subject" name="search" />
-                                <button type="submit">Search</button>
-                            </form>
-                        </div>
-
-                        <div class="top-bar add-sub">
-                            <Link to={"/add"} className="nav-link">Add New</Link>
-                        </div>
-                    </div>
-
+                    <NavBar />
                     <table class="fixed" >
                         <thead>
                             <tr>
@@ -61,13 +52,12 @@ class VoteComponent extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {this.state.subjects.map((item, index) => (
+                            {this.state.subjects.filter(x => x.status === "active").map((item, index) => (
                                 <tr className="noBorder" key={index}>
                                     <td className="col-2">{item.title}</td>
                                     <td className="col-2">{item.count}</td>
                                     <td className="col-5">
-                                        <button className="voteBtn" onClick={() => { this.buttonClicked(item.id, item.count) }}>Click here to vote</button></td>
-                                   
+                                        <button className="voteBtn" onClick={() => { this.updateCount(item.id, item.count) }}>Click here to vote</button></td>
                                 </tr>
                             ))}
                         </tbody>
@@ -76,7 +66,6 @@ class VoteComponent extends Component {
             </div>
         )
     }
-
 }
 
 export default VoteComponent;

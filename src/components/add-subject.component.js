@@ -20,20 +20,22 @@ class AddSubject extends Component {
             ]
         }
     }
-    
 
+    /* get the title value onchnage  */
     onChangeTitle(e) {
         this.setState({
             title: e.target.value
         });
     }
 
+    /* get the description value onchnage */
     onChangeDescription(e) {
         this.setState({
             description: e.target.value
         });
     }
 
+    /* Add new subject to subjects array and save in localstorage*/
     handleSubmit(e) {
         e.preventDefault();
         const subject = {
@@ -45,9 +47,9 @@ class AddSubject extends Component {
         };
         localStorage.setItem("subjects", JSON.stringify(this.state.subjects));
         this.setState({ subjects: this.state.subjects.concat(subject) });
-        
     }
 
+    /* local storage get items */
     componentDidMount() {
         let itemsList = localStorage.getItem('subjects')
         if (itemsList) {
@@ -57,9 +59,8 @@ class AddSubject extends Component {
         }
     }
 
+    /* local storage set items */
     componentDidUpdate() {
-        {/* localStorage.removeItem("subjects"); 
-        */ }
         localStorage.setItem('subjects', JSON.stringify(this.state.subjects));
     }
 
@@ -72,7 +73,7 @@ class AddSubject extends Component {
                         <label htmlFor="title">Title</label>
                         <input
                             type="text"
-                            className="form-control"
+                           className="form-control"
                             id="title"
                             required
                             value={this.state.title}
@@ -92,14 +93,11 @@ class AddSubject extends Component {
                             name="description"
                         />
                     </div>
-                    <button type="submit" className="btn btn-success">Submit
-                    </button>
+                    <button type="submit" className="btn btn-success">Submit</button>
                 </form>
              </div>
         )
     }
-   
-
 }
 
 export default AddSubject;
